@@ -1,33 +1,502 @@
 * {
     margin: 0;
     padding: 0;
+
 }
-img {
-    padding-left: 260px;
+body{
+    overflow-x: hidden;
+
+    /*overflow-y: hidden;*/
 }
 .menu {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 80px;
-    background: rgba(0, 0, 0, .3);
+    height: 90px;
+   background: rgba(0,0,0,.3);
     overflow: hidden;
     z-index: 3;
 }
+.menu__content {
+    position: relative;
+    margin: 17px auto;
+    width: 996px;
+    height: 46px;
+}
+/*第一个块*/
 .mod_banner {
     height: 650px;
-    background-color: red;
+    /*background-color: red;*/
+    position: relative;
+    z-index: 3;
 }
+.mod_banner_pc{
+    /*display: block;*/
+    background: url("../images/banner_pc.jpg") 50% no-repeat;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /*display: none;*/
+}
+/*第一块的字体*/
+.mod_banner_tit{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -205px;
+    width: 578px;
+    height: 214px;
+    overflow: hidden;
+    background-image: url("../images/img_index.png");
+    z-index: 3;
+}
+/*设置表盘*/
+.watch{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -300px;
+    margin-left: -530px;
+    width: 476px;
+    height: 478px;
+    background: url("../images/watch_bg.png") 0 0 no-repeat;
+}
+/*设置表的指针摆动*/
+.watch_hand{
+    position: absolute;
+    top: 220px;
+    left: 220px;
+    width: 131px;
+    height: 105px;
+    background-image: url("../images/img_index.png");
+    background-position: -448px -824px;
+    animation: watchs 2s both;
+    transform-origin: 24px 24px;
+}
+@keyframes watchs {
+    0% {
+        transform: rotate(-252deg);
+    }
+    70% {
+        transform: rotate(3deg);
+    }
+    80% {
+        transform: rotate(-2deg);
+    }
+    90% {
+        transform: rotate(1deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+/*设置表的第一个数字*/
+.watch_num1{
+    position: absolute;
+    top: 320px;
+    left: 204px;
+    width: 40px;
+    height: 50px;
+    background-image: url("../images/watch_numb.png");
+    animation: watchnum 1.5s steps(6) both;
+}
+/*设置表的第二个数字*/
+.watch_num2{
+    position: absolute;
+    top: 320px;
+    left: 248px;
+    width: 40px;
+    height: 50px;
+    background-image: url("../images/watch_numb.png");
+    animation: watchnum2 .5s steps(10) 3;
+}
+@keyframes watchnum {
+    100% {
+        background-position: 0 -300px;
+    }
+}
+@keyframes watchnum2 {
+    100% {
+        background-position: 0 1000px; /*500效果好看*/
+    }
+}
+
+/*4个下载图标的定位等情况*/
+.dowload_list{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 190px;
+    text-align: center;
+}
+/*4个图标上的线*/
+.dowload_list_br{
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #fff;
+    opacity: .12;
+    overflow: hidden;
+}
+.dowload_list_pc{
+    background-image: url("../images/img_index.png");
+    background-position: -336px -824px;
+    background-position: 0 -824px;
+    line-height: 999px;
+    overflow: hidden;
+    width: 110px;
+    height: 170px;
+    margin-right: 185px;
+    position: relative;
+    vertical-align: top;
+    opacity: .4;   /*透明度*/
+    display: inline-block;
+}
+
+.dowload_list_mac{
+    background-image: url("../images/img_index.png");
+    background-position: -224px -824px;
+    background-position: 0 -824px;
+    line-height: 999px;
+    overflow: hidden;
+    width: 110px;
+    height: 170px;
+    margin-right: 185px;
+    position: relative;
+    vertical-align: top;
+    opacity: .4;
+    display: inline-block;
+}
+
+.dowload_list_inphone{
+    background-image: url("../images/img_index.png");
+    background-position: -112px -824px;
+    background-position: 0 -824px;
+    line-height: 999px;
+    overflow: hidden;
+    width: 110px;
+    height: 170px;
+    margin-right: 185px;
+    position: relative;
+    opacity: .4;
+    display: inline-block;
+}
+
+.dowload_list_android{
+    background-image: url("../images/img_index.png");
+    background-position: 0 -824px;
+    line-height: 999px;
+    overflow: hidden;
+    width: 110px;
+    height: 170px;
+    margin-right: 185px;
+    position: relative;
+    opacity: .4;
+    display: inline-block;
+}
+
+
+/*图片模板*/
+.part_singer {
+    height: 900px;
+    position: relative;
+}
+.active .part_singer__pic1,.active .part_singer__pic10,.active .part_singer__pic11,.active .part_singer__pic14,.active .part_singer__pic15, .active .part_singer__pic16, .active .part_singer__pic18, .active .part_singer__pic2, .active .part_singer__pic22, .active .part_singer__pic3, .active .part_singer__pic4, .active .part_singer__pic5, .active .part_singer__pic6, .active .part_singer__pic7, .active .part_singer__pic8, .active .part_singer__pic9 {
+    background: url(../images/sprite1.jpg) no-repeat;
+}
+
+
+.active .part_singer__pic23, .active .part_singer__pic24, .active .part_singer__pic26, .active .part_singer__pic27, .active .part_singer__pic28, .active .part_singer__pic29, .active .part_singer__pic31, .active .part_singer__pic33, .active .part_singer__pic34, .active .part_singer__pic36, .active .part_singer__pic37, .active .part_singer__pic38, .active .part_singer__pic39, .active .part_singer__pic40, .active .part_singer__pic41, .active .part_singer__pic42, .active .part_singer__pic43, .active .part_singer__pic44, .active .part_singer__pic45 {
+    background: url(../images/sprite2.jpg) no-repeat;
+}
+@keyframes big {
+    0% {
+        opacity: 0;
+        transform: scale(1.2);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+/*45个图片div的宽高等*/
+.part_singer__item {
+    width: 211px;
+    height: 211px;
+    position: relative;
+    float: left;
+}
+/*图片的*/
+.part_singer__pic{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 211px;
+}
+/*图片宽度及样式*/
+.section__inner{
+    width: 1900px;
+    position: absolute;
+    left: -190px;
+}
+/*h2标签*/
+.part_singer__tit {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -281px;
+    margin-top: -100px;
+    width: 563px;
+    height: 75px;
+    background-image: url("../images/img_index.png");
+    background-position: -445px -512px;
+    z-index: 2;
+}
+/*h3标签*/
+.part_singer__desc {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -174px;
+    width: 348px;
+    height: 69px;
+    background-image: url("../images/img_index.png");
+    background-position: -842px -664px;
+    z-index: 2;
+}
+.active .part_singer__pic1{
+    background-position: 0 0;
+    animation:big 2s;
+}
+.active .part_singer__pic2 {
+    background-position: 0 -212px;
+    animation:big 1.5s;
+}
+
+.active .part_singer__pic3 {
+    background-position: 0 -424px;
+    animation:big 1s;
+}
+
+.active .part_singer__pic4 {
+    background-position: 0 -636px;
+    animation:big 3s;
+}
+
+.active .part_singer__pic5 {
+    background-position: 0 -848px;
+    animation:big 2.5s;
+}
+
+.active .part_singer__pic6 {
+    background-position: 0 -1060px;
+    animation:big 2s;
+}
+
+.active .part_singer__pic7 {
+    background-position: 0 -1272px;
+    animation:big 1.5s;
+}
+
+.active .part_singer__pic8 {
+    background-position: 0 -1482px;
+    animation:big 1s;
+}
+
+.active .part_singer__pic9 {
+    background-position: 0 -1696px;
+    animation:big .3s;
+}
+.active .part_singer_1_pic10 {
+    background-position: 0 -1908px;
+    background: url(../images/sprite1.jpg) no-repeat;
+    animation:big .3s;
+}
+.active .part_singer__pic11 {
+    background-position: 0 -2120px;
+    animation:big 2s;
+}
+
+.active .part_singer__pic12 {
+    animation:big 1.5s;
+}
+.active .part_singer__pic14 {
+    background-position: 0 -2332px;
+    animation:big 3s;
+}
+.active .part_singer__pic15 {
+    background-position: 0 -2544px;
+    animation:big .3s;
+}
+active .part_singer__pic16 {
+    background-position: 0 -2756px;
+    animation:big .5s;
+}
+.active .part_singer__pic17 {
+    background-position: 0 -424px;
+    animation:big 2s;
+}
+.active .part_singer__pic18 {
+    background-position: 0 -2968px;
+    animation:big 1.5s;
+}
+.active .part_singer__pic19 {
+    animation:big 1.2s;
+}
+.active .part_singer__pic20 {
+    animation:big .8s;
+}
+.active .part_singer__pic21 {
+    animation:big .5s;
+}
+.active .part_singer__pic22 {
+     background-position: 0 -3180px;
+    animation:big 2s;
+ }
+.active .part_singer__pic23 {
+    background-position: 0 0;
+    animation:big.1.5s;
+}
+.active .part_singer__pic24 {
+    background-position: 0 -212px;
+    animation:big 1.2s;
+}
+.active .part_singer__pic26 {
+    background-position: 0 -424px;
+    animation:big.5s;
+}
+.active .part_singer__pic27 {
+    background-position: 0 -636px;
+    animation:big 2s;
+}
+.active .part_singer__pic28 {
+    background-position: 0 -848px;
+    animation:big 1.5s;
+}
+.active .part_singer__pic29 {
+    background-position: 0 -1060px;
+    animation:big 1.2s;
+}
+.active .part_singer__pic30 {
+    animation:big .8s;
+}
+.active .part_singer__pic31 {
+    background-position: 0 -1272px;
+    animation:big .5s;
+}
+.active .part_singer__pic32 {
+    animation:big .3s;
+}
+.active .part_singer__pic33 {
+    background-position: 0 -1482px;
+    animation:big 1.5s;
+}
+.active .part_singer__pic34 {
+    background-position: 0 -1696px;
+    animation:big 1.2s;
+}
+.active .part_singer__pic35 {
+    animation:big .5s;
+}
+.active .part_singer__pic36 {
+    background-position: 0 -1908px;
+    animation:big 2.5s;
+}
+.active .part_singer__pic37 {
+    background-position: 0 -2120px;
+    animation:big .3s;
+}
+.active .part_singer__pic38 {
+    background-position: 0 -2332px;
+    animation:big 1s;
+}
+.active .part_singer__pic39 {
+    background-position: 0 -2544px;
+    animation:big .8s;
+}
+.active .part_singer__pic40 {
+    background-position: 0 -2756px;
+    animation:big 1s;
+}
+.active .part_singer__pic41 {
+    background-position: 0 -2968px;
+    animation:big .5s;
+}
+.active .part_singer__pic42 {
+    background-position: 0 -3180px;
+    animation:big 1.5s;
+}
+.active .part_singer__pic43 {
+    background-position: 0 -3392px;
+    animation:big 1.2s;
+}
+.active .part_singer__pic44 {
+    background-position: 0 -3604px;
+    animation:big 2.5s;
+}
+.active .part_singer__pic45 {
+    background-position: 0 -3816px;
+    animation:big .8s;
+}
+/*害怕出问题的代码*/
+/*.part_singer  .section_inner{*/
+/*position: absolute;*/
+/*top: 50%;*/
+/*left: 50%;*/
+/*margin: -534px -960px;*/
+/*width: 1920px;*/
+/*height: 1055px;*/
+/*background-color: black;*/
+/*z-index: 2;*/
+/*}*/
+
+/*照相机板块*/
+.part_lyric {
+    height: 900px;
+    /*position: relative;*/
+    background-image: url("../images/bg_lyric.jpg");
+}
+
+.part_lyric_bg1 {
+    width: 100%;
+    height: 350px;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-image: url("../images/bg_lyric1_ie.jpg");
+}
+
+.part_lyric_bg2 {
+    width: 100%;
+    height: 349px;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-image: url("../images/bg_lyric2_ie.jpg");
+}
+
+.part_lyric_bg3 {
+    width: 100%;
+    height: 376px;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-image: url("../images/bg_lyric3_ie.jpg");
+}
+
+/*一下为倒数第二个块*/
 .part_like {
     height: 900px;
-    background-color: #18F38C;
     background-image: url("../images/bg_like.jpg");
     position: relative;
 }
-.part_like_desc{
+
+.part_like_desc {
     position: absolute;
-    top: 50%;/*左右居中*/
+    top: 50%; /*左右居中*/
     left: 50%;
     margin-left: -50px;
     margin-top: 70px;
@@ -37,6 +506,7 @@ img {
     background-position: -445px -589px;
     z-index: 2;
 }
+
 /*手机块的大小及位置*/
 .part_like_phone {
     position: absolute;
@@ -47,12 +517,13 @@ img {
     width: 520px;
     height: 807px;
 }
+
 /*手机轮廓大小*/
 .like_phone {
     position: absolute;
     top: 176px;
     /*animation: like_phone 1.5s ;*/
-    transform: skew(6deg,-5deg);/*倾斜动画 6代表x轴*/
+    transform: skew(6deg, -5deg); /*倾斜动画 6代表x轴*/
     /*transform: rotate(-5.5deg); !*图片旋转*!*/
     /*animation: yi 2s both .5s;*/
     left: 60px;
@@ -61,25 +532,28 @@ img {
     background: url(../images/like_phone.jpg) no-repeat;
     animation: yi 1s ease-out alternate;
 }
-.icon_arrow{
+
+.icon_arrow {
     position: absolute;
-    bottom: 32px;/*底部*/
+    bottom: 32px; /*底部*/
     left: 100%;
     width: 36px;
     height: 20px;
     background: url(../images/img_index.png) no-repeat;
     background-position: -1036px -147px;
 }
+
 @keyframes yi {
     0% {
         opacity: 0; /*透明效果*/
-        transform: translateX(-60px)/*改变x轴的位置*/;
+        transform: translateX(-60px) /*改变x轴的位置*/;
     }
     100% {
         opacity: 1;
         transform: translateX(0);
     }
 }
+
 @keyframes rig {
     0% {
         opacity: 0;
@@ -90,6 +564,7 @@ img {
         transform: translateX(0);
     }
 }
+
 @keyframes rig2 {
     0% {
         opacity: 0;
@@ -100,6 +575,7 @@ img {
         transform: translateX(0);
     }
 }
+
 /*里边的图片*/
 .like_phonebox {
     position: absolute;
@@ -110,6 +586,7 @@ img {
     animation: yi 1s ease-out alternate;
     background: url(../images/like_phonebox.png) no-repeat;
 }
+
 /*定位文字*/
 .part_like_tit {
     position: absolute;
@@ -122,6 +599,7 @@ img {
     background-image: url("../images/img_index.png");
     background-position: 0 -216px;
 }
+
 /*以下代码最后一个块*/
 .part_synchro {
     height: 900px;
@@ -129,6 +607,7 @@ img {
     background: url("../images/bg_synchro.jpg") 50% no-repeat; /*加50图片均匀平均分*/
     position: relative;
 }
+
 .part_synchro_tit {
     position: absolute;
     top: 50%;
@@ -141,6 +620,7 @@ img {
     background-position: -617px -216px;
     z-index: 2;
 }
+
 .part_synchro_desc {
     position: absolute;
     top: 50%;
@@ -153,6 +633,7 @@ img {
     background-position: -580px -147px;
     z-index: 2;
 }
+
 .part_mac {
     background: url("../images/synchro_mac1 (1).png") 0 0 no-repeat;
     /*background: url("../images/synchro_mac2 (2).png")no-repeat;*/
@@ -165,6 +646,7 @@ img {
     z-index: 2;
     animation: rig 1.5s ease-out alternate;;
 }
+
 .part_mac2 {
     background: url("../images/synchro_mac2 (2).png");
     position: absolute;
@@ -174,6 +656,7 @@ img {
     height: 376px;
     animation: rig 0s ease-out alternate;;
 }
+
 .part_synchro_phone {
     position: absolute;
     top: 50%;
@@ -184,6 +667,7 @@ img {
     animation: yi 1.5s ease-out alternate;;
     background-image: url("../images/synchro_phone (1).png");
 }
+
 .mod_footer {
     position: absolute;
     bottom: 0;
@@ -198,6 +682,7 @@ img {
     text-align: center;
 
 }
+
 /*去除版权的下划线 设置字体大小颜色*/
 .mod_footer a {
     text-decoration: none;
