@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0
+        }
+
+        body {
+            color: #333;
+            background-color: #fff;
+            font-size: 14px;
+            line-height: 1.5;
+            font-family:verdana;
+
+        }
+        /*设置整个头的高度宽度*/
+        .mod_header {
+            width: 100%;
+            height: 170px;
+            //background-color: red;
+            position: absolute;
+        }
+         /*QQ音乐图标*/
+        .qqmusic_logo {
+            width: 170px;
+            height: 46px;
+            padding-left: 203px;
+            padding-top: 30px
+        }
+        /*设置我的音乐的几个大图标*/
+        .mod_top_nav {
+            position: absolute;
+            left: 198px;
+            top: 0;
+            display: block;
+            width: 435px;
+            height: 20px;
+            padding-left: 203px;
+            list-style: none;
+            padding-top: 40px;
+        }
+        /*去除a标签下划线*/
+        a {
+            text-decoration: none
+        }
+        /*去除大字体的原点设置字体*/
+        .top_nav__item {
+            padding: 15px;
+            display: inline;
+            font-size: 18px;
+        }
+        /*设置小系字体的定位等情况*/
+        .mod_top_subnav {
+
+            line-height: 51px;
+            list-style: none;
+            border-top: 1px solid #f2f2f2;
+            padding-left: 410px;
+            margin-right: -50px;
+        }
+        /*设置小字体间距和横列*/
+        .top_subnav__item {
+            display: inline;
+            padding: 20px;
+
+        }
+        /*设置搜索块的定位*/
+        .mod_top_search {
+            position: absolute;
+            top: 0;
+            right: 450px;
+        }
+        /*设置搜索块样式*/
+        .mod_search_input{
+            border: 1px solid #c9c9c9;
+            padding: 0 33px 0 11px;
+            line-height: 36px;
+            height: 36px;
+            margin-top: 26px;
+            position: relative;
+            border-radius: 3px;
+            background-color: #fff;
+        }
+        /*设置搜索的宽度*/
+        .search_input__input{
+              width: 174px;
+              height: 36px;
+              border: 0 none;
+              font-size: 14px;
+              background: 0 0;
+            outline: none;
+          }
+        /*设置未登录样式*/
+        .header__opt {
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 90px;
+            line-height: 90px;
+           left: 1300px;
+           padding-right: 60px;
+            float: right;
+        }
+        /*搜索框按钮*/
+        .top_login__btn_vip {
+            margin-top: 24px;
+            padding: 0 9px;
+            margin-left: 10px;
+            margin-right: 0;
+            font-size: 13px;
+            outline: none;
+
+        }
+        /*颜色*/
+        .mod_btn_green {
+            border: 1px solid #31c27c;
+            background-color: #31c27c;
+            color: #fff;
+        }
+        /*放大镜按钮*/
+        .search_input__btn {
+            position: absolute;
+            top: 0;
+            right: 0;
+            border: 0 none;
+            width: 38px;
+            height: 35px;
+            overflow: visible;
+            background: 0 0;
+        }
+        <!---放大小图标和颜色-->
+        .fa {
+               position: absolute;
+               top: 50%;
+               right: 11px;
+               margin-top: -8px;
+               width: 16px;
+               height: 16px;
+               background-position: 0 -40px;
+           }
+        i{
+            transform: scale(1.3);
+            color: #c9c9c9;
+        }
+    </style>
+    <link rel="stylesheet" href="css/css/font-awesome.min.css">
+</head>
+<body>
+<nav class="mod_header">
+    <img src="images/logo.png" class="qqmusic_logo">
+    <!-- 导航 S -->
+    <ul class="mod_top_nav">
+        <li class="top_nav__item"><a href="#" class="top_subnav__link">音乐馆</a></li>
+        <li class="top_nav__item"><a href="#">我的音乐</a></li>
+        <li class="top_nav__item"><a href="#">客户端</a></li>
+        <li class="top_nav__item"><a href="#">音乐号</a></li>
+        <li class="top_nav__item"><a href="#">VIP</a></li>
+    </ul>
+
+    <ul class="mod_top_subnav">
+        <li class="top_subnav__item"><a href="#" class="top_subnav__link">首页</a></li>
+        <li class="top_subnav__item"><a href="#" class="top_subnav__link">歌手</a></li>
+        <li class="top_subnav__item"><a href="#" class="top_subnav__link">专辑</a></li>
+        <li class="top_subnav__item"><a href="#" class="top_subnav__link">排行榜</a></li>
+        <li class="top_subnav__item"><a href="#" class="top_subnav__link">分类歌单</a></li>
+        <li class="top_subnav__item"><a href="#" class="top_subnav__link">电台</a></li>
+        <li class="top_subnav__item"><a href="#" class="top_subnav__link">MV</a></li>
+        <li class="top_subnav__item"><a href="#" class="top_subnav__link">数字专辑</a></li>
+    </ul>
+    <!-- 导航 E -->
+    <div class="mod_top_search">
+        <div class="mod_search_input">
+            <input class="search_input__input" aria-label="请输入搜索内容" type="text" placeholder="搜索音乐、MV、歌单、用户">
+            <button class="search_input__btn">    <i class="fa fa-search" ></i></button>
+
+        </div>
+    </div>
+    <div class="header__opt">
+        <!-- 未登录 -->
+        <span class="mod_top_login">
+		    <a class="top_login__link js_logined" href="#" style="display:none;"></a>
+                    <a class="top_login__link js_login" href="#"></a>
+                    <a class="login__link header__link js_login"  href="">登录</a>
+                    <a class="mod_btn_green top_login__btn_vip js_openvip"href="">开通绿钻豪华版</a>
+		    <a class="mod_btn top_login__btn_vip js_openmusic"href="j">开通付费包</a>
+                </span>
+        <!-- 用户信息 -->
+        <div class="popup_user"></div>
+    </div>
+</nav>
+</body>
+</html>
